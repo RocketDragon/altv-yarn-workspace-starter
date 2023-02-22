@@ -1,0 +1,10 @@
+announce = false
+description = 'alt:V Sample Server'
+gamemode = 'Freeroam'
+host = '0.0.0.0'
+language = 'en'
+modules = [ 'js-module' ]
+name = 'alt:V Server'
+players = 16
+port = 7788
+#resources = [ 'common', 'template-js' ]
