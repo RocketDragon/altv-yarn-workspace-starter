@@ -41,11 +41,15 @@ While this does server to be the outline of a server assembly, it does not come 
 
 | Action | `npm` | `yarn` |
 | ------ | ----- | ------ |
-| Install across all workspaces | `npm i --ws` | `yarn` |
-| Install for one workspace | `npm i -w=<name>` | N/A |
+| Install / refresh dependencies across all workspaces | `npm i --ws` | `yarn` |
+| Install dependencies for one workspace | `npm i <pkg> -w=<name>` | `yarn workspace <name> add <pkg>` |
+| Remove dependencies for one workspace | `npm remove <pkg> -w=<name>` | `yarn workspace <name> remove <pkg>` |
+| Install / Remove dependencies for root workspace | `npm install/remove <pkg>` | `yarn add/remove <pkg> -W` |
 | Run for all workspaces | `npm run <script> --ws [--if-present]` | `yarn workspaces run <script>` |
 | Run for one workspace | `npm run <script> -w=<name> [--if-present]` | `yarn workspace <name> run <script>` |
 | Workspace information | *Unknown* | `yarn workspaces info` |
+| Run any binary in all workspaces | `npm exec --ws -c <cmd> [args...]` / `npx ...` | `yarn workspaces run <cmd> [args...]` |
+| Run any binary in one workspace | `npm exec -w=<name> -c <cmd> [args...]` / `npx ...` | `yarn workspace <name> run <cmd> [args...]` |
 
 > `~/node_module/.bin/*` scripts can also be run from `yarn workspaces run <bin>` - which will run from the bin folder within the workspace.
 
